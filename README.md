@@ -1,3 +1,5 @@
+This project was a practice project from Colt Steele's course "The Modern React Bootcamp".
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
