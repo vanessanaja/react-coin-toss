@@ -5,7 +5,7 @@ import CoinContainer from './CoinContainer';
 function App() {
   return (
     <div className="App">
-       
+       <CoinContainer />
     </div>
   );
 }
