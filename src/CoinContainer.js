@@ -11,25 +11,31 @@ class CoinContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      currentCoint: null,
+      currCoin: null,
       numFlips: 0,
       numHeads: 0,
       numTails: 0
     };
-    this.handleclick = this.handleclick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
   flipCoin(){
-
+    const newCoin = choice(this.props.coins);
+    this.setState(st => {
+      return {
+         currCoin: newCoin,
+         numFlips: st.numFlips + 1,
+      };
+    });
   }
-  handleclick(e){
-    this.flipCoin()
+  handleClick(e){
+    this.flipCoin();
   }
   render(){
     return (
       <div className="CoinContainer">
         <h2>Flip the Coin!</h2>
-        <p>Out of {this.state.numFlips} flips there have been {this.state.numHeads} heads and {this.state.numTails} tails.</p>
         <button onClick={this.handleClick}>Flip Coin</button>
+        <p>Out of {this.state.numFlips} flips there have been {this.state.numHeads} heads and {this.state.numTails} tails.</p>
       </div>
     )
   }
