@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { choice } from './helpers';
 
 class CoinContainer extends Component {
   static defaultProps = {
@@ -15,12 +16,20 @@ class CoinContainer extends Component {
       numHeads: 0,
       numTails: 0
     };
+    this.handleclick = this.handleclick.bind(this);
+  }
+  flipCoin(){
+
+  }
+  handleclick(e){
+    this.flipCoin()
   }
   render(){
     return (
       <div className="CoinContainer">
         <h2>Flip the Coin!</h2>
         <p>Out of {this.state.numFlips} flips there have been {this.state.numHeads} heads and {this.state.numTails} tails.</p>
+        <button onClick={this.handleClick}>Flip Coin</button>
       </div>
     )
   }
